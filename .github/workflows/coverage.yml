@@ -37,14 +37,13 @@ jobs:
     env:
       DISPLAY: ${{ ':0' }}
       MUSIC_INSTALL_DIR: /opt/MUSIC
-      MUSIC_VERSION: 1.2.1
+      MUSIC_VERSION: 1.2.0
 
     steps:
 
       - name: Install apt packages
         run: |
-          sudo apt-get install xfonts-100dpi build-essential doxygen lcov libboost-all-dev libmpich-dev libx11-dev libxcomposite-dev mpich gpg ninja-build flex bison libfl-dev
-          sudo apt-get purge -y libopenmpi-dev openmpi-bin
+          sudo apt-get install xfonts-100dpi build-essential doxygen lcov libboost-all-dev libopenmpi-dev libmpich-dev libx11-dev libxcomposite-dev mpich openmpi-bin gpg ninja-build flex bison libfl-dev
         shell: bash
 
       - name: Setup Caliper profiler
